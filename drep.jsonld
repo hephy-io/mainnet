@@ -36,8 +36,8 @@
         "givenName": "Hephaestus Stake Pool [HEPHY]",
         "image": {
             "@type": "ImageObject",
-            "contentUrl": "https://tinyurl.com/4rxhy2h4",
-            "sha256": "9256185fca47e2c93a2304f472dcf4445dda78ea4a506266b3e285ed67a756f8"
+            "contentUrl": "https://tinyurl.com/4nwbeh72",
+            "sha256": "2dd9814ceb588e891d9af25945ea3d0ece08319f29997a210611188e929ae839"
         },
         "objectives": "To be an open and transparent voting member of the Cardano community. Providing an avenue by which the day-to-day holder of ADA can delegate their voting power when they cannot commit the time or resources to participate in this role themselves.",
         "motivations": "I have been an avid member of the Cardano community, having been a holder since March 2018. I ran a testnet pool between March-December 2021 before making the jump to mainnet in February 2022 with HEPHY pool. The pool has remained a small, independent pool over the first 2.5 years and so I wanted to participate as a DRep in order to have a more meaningful say in on-chain voting on Cardano.",
