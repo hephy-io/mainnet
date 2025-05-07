@@ -65,6 +65,11 @@
       },
       {
         "@type": "Other",
+        "label": "Cardano Blockchain Ecosystem Constitution",
+        "uri": "ipfs://bafkreiazhhawe7sjwuthcfgl3mmv2swec7sukvclu3oli7qdyz4uhhuvmy"
+      },
+      {
+        "@type": "Other",
         "label": "Rewards Sharing Scheme for Stake Pools, June 2020",
         "uri": "https://arxiv.org/ftp/arxiv/papers/1807/1807.11218.pdf"
       },
