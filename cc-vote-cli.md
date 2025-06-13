@@ -36,7 +36,7 @@ Prerequisites: Java 21 installed on client machine, visit Visit https://github.c
 ```
 7. Run `java -jar cc-ballot-cli-all.jar cast_vote payload.json "<signature>" "<pubKey>"` // Copy paste the outputs from Cardano Signer here, run inside unzipped cc-ballot-cli folder
 
-8. To verify your vote, edit the payload.json (create as receipt.json if easier) E.g. `cp payload.json receipt.json` `nano receipt.json`
+8. To verify your vote, edit the payload.json (create as receipt.json if easier) E.g. `cp payload.json receipt.json` then `nano receipt.json`
 ```
 {
     "action": "view_vote_receipt", // Change "cast_vote" to "view_vote_receipt"
