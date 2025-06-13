@@ -26,10 +26,11 @@ Prerequisites: Java 21 installedon client machine, visit Visit https://github.co
 4. Store payload JSON in a payload.json file
 
 5. Sign the payload using Cardano signer (preferably on your cold env!)
-     cardano-signer sign --cip8 \
-      --data payload.json \
-      --secret-key drep.skey \
-      --address drep.id \
-      --json
+
+    cardano-signer sign --cip8 \
+        --data payload.json \
+        --secret-key drep.skey \
+        --address drep.id \
+        --json
 
 7. Run `java -jar cc-ballot-cli-all.jar cast_vote payload.json "<signature>" "<pubKey>"`
