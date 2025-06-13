@@ -4,7 +4,7 @@ Prerequisites: Java 21 installed on client machine, visit https://github.com/Int
 
 2. Unzip the file `unzip cc-ballot-cli-all.zip`
 
-3. Get payload from https://elections.constitution.gov.tools/
+3. Get payload from https://elections.constitution.gov.tools/ (It will look like this).
 ```
    {
     "action": "cast_vote",
