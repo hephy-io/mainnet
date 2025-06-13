@@ -1,4 +1,4 @@
-Prerequisites: Java 21 installedon client machine, visit Visit https://github.com/IntersectMBO/cc-ballot/blob/main/cli/cc-ballot-cli/README.md
+Prerequisites: Java 21 installed on client machine, visit Visit https://github.com/IntersectMBO/cc-ballot/blob/main/cli/cc-ballot-cli/README.md
 
 1. Download the latest release `wget https://github.com/IntersectMBO/cc-ballot/releases/download/1.0.1/cc-ballot-cli-all.zip`
 
