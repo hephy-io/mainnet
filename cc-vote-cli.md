@@ -5,7 +5,7 @@ Prerequisites: Java 21 installed on client machine, visit https://github.com/Int
 2. Unzip the file `unzip cc-ballot-cli-all.zip`
 
 3. Get payload from https://elections.constitution.gov.tools/ (It will look like this).
-```
+```json
    {
     "action": "cast_vote",
     "slot": "<slot number at vote>", // This needs to be a future slot so use "cardano-cli query tip --mainnet --socket-path /path/to/socket" and add 300 (5 mins)
@@ -37,7 +37,7 @@ Prerequisites: Java 21 installed on client machine, visit https://github.com/Int
 7. Run `java -jar cc-ballot-cli-all.jar cast_vote payload.json "<signature>" "<pubKey>"` // Copy paste the outputs from Cardano Signer here, run inside unzipped cc-ballot-cli folder
 
 8. OPTIONAL: To verify your vote, edit the payload.json (create as receipt.json if easier) E.g. `cp payload.json receipt.json` then `nano receipt.json`
-```
+```json
 {
     "action": "view_vote_receipt", // Change "cast_vote" to "view_vote_receipt"
     "slot": "<slot number at vote>", // This needs to be a future slot so use "cardano-cli query tip --mainnet --socket-path /path/to/socket" and add 300 (5 mins)
