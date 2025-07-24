@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I have decided to vote NO on the 2025 maintenance and development budget info action proposal for the Tempo platform, in its current form at least. I appreciate the work that the team at Tempo have put in to creating an additional governance platform for Cardano, providing an alternative to GovTool and thus helping decentralise reliance on a singular platform.\n\nHowever, this proposal feels somewhat reactionary to the recent GovTool proposal and while providing an abstract, motivation and rationale, it feels a little light on the details. Previously approved budget info actions have been very detailed and included outlines for proposed budget administration processes. This proposal simply states a requested amount, vaguely outlined as infrastructure and development cost without further breakdowns and points simply to a named administrator without any further detail regarding potential fund management or dispute resolution mechanisms.\n\nI appreciate that another long pause in Catalyst rounds may have left teams scrambling for funding at this point in time but with Fund 14 having just launched I would encourage the Tempo team to apply through that avenue when the opportunity arises, in the short term. If they wish to resubmit a budget info action (should this fail to pass this time) I would encourage them to re-evaluate existing examples for Amaru and Intersect, that have already passed, in order to help inform them to produce a more detailed proposal that might better serve to put any community questions to rest."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
