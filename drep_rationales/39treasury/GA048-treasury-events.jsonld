@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "It is incredibly frustrating to see this sudden self-awareness of the “challenges in establishing a consistent and impactful presence at global blockchain events” only emerge the year that the Cardano treasury becomes accessible. We have had teams like Discover Cardano digging into their own pocket to try and plug a gap at a major convention in 2023 that otherwise had zero Cardano representation, demonstrating how such participation could be achieved in a cost-effective way, only to be refused recognition or future funding for their efforts. This situation is wholly a product of founding entities neglecting their remits and responsibilities as genesis ada holders. To now request treasury funding in year one to fix an issue largely of their own making for the past 4+ years is frankly absurd.\n\nThis request should come with a public apology, or at least an acknowledgement from those whom this was their remit and responsibility for the past 4+ years, before expecting ada holders to green light funding to fix a problem of their own making.\n\nI will take a moment to acknowledge the efforts and achievements of Rare Network and this rationale is in no way directed at them. What they have achieved over the past 4 years for Cardano events and now the wider crypto ecosystem has been nothing short of amazing. Equally, I am hugely appreciative and respect the efforts that the Cardano Foundation has put in with hosting the Cardano Summit since 2022, this is also not a reflection of that.\n\nI have attended crypto events in the UK over the past few years and last year had to witness Solana and their Superteam initiative go on to do a nation-wide hackathon tour of the UK’s universities, imagine how awkward that felt attending a conference at one of the top 2 universities in the country only to find Cardano, the “academic blockchain”, not even be so much as a footnote on the sponsorship board.\n\nI appreciate the need for this proposal and wish that it had existed for the last 2-3+ years but I cannot in good conscience say yes without an acknowledgement of how we have ended up here in the first place. Therefore, I choose to abstain at this time."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
