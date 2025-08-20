@@ -25,8 +25,13 @@ cardano-cli conway governance vote create --mainnet \
 ```
 
 To get the correct hash of your rationale file, download the raw file:
+
 `wget https://raw.githubusercontent.com/hephy-io/mainnet/refs/heads/main/drep_rationales/GA061-update-committee.jsonld`
+
 Calculate the hash:
+
 `b2sum -l 256 GA061-update-committee.jsonld`
+
 Save the output:
+
 `GA061-update-committee.jsonld 7809e04a30e640ac4464c38be846d32ca46f9cab99ed8c58f51b7fd0701f16a7`
