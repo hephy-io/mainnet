@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "Having voted YES on the associated budget info action I once again vote YES to this treasury withdrawal action for the Critical Integrations Budget. As stated in the vote on the budget info action, this renewed co-ordinated approach from the proposers of this action can help to move these integrations along more efficiently, in both time and money, by reducing any potential duplication of effort and spend that may occur if the entities continued to pursue these deals independently.\n\nAdditional checks to this proposal include, matching metadata hashes for the on-chain / off-chain content, author signatures provided here also match those provided at the budget info action stage and the on-chain requested amount also match that stated in the proposal. Although usually the remit of the Constitutional Committee, given their current state of being below committeeMinSize and the size of this treasury withdrawal request being 70 million ada, it pays to remain prudent."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
