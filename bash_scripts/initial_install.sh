@@ -40,23 +40,13 @@ AGGREGATOR_ENDPOINT="https://aggregator.release-mainnet.api.mithril.network/aggr
 GENESIS_VKEY_URL="https://raw.githubusercontent.com/input-output-hk/mithril/main/mithril-infra/configuration/release-mainnet/genesis.vkey"
 ANCILLARY_VKEY_URL="https://raw.githubusercontent.com/input-output-hk/mithril/main/mithril-infra/configuration/release-mainnet/ancillary.vkey"
 
-# --- 3. PRE-FLIGHT & DYNAMIC VERSIONING ---
-if ! command -v jq &> /dev/null || ! command -v curl &> /dev/null; then
-    sudo apt-get update && sudo apt-get install -y jq curl
-fi
-
-LATEST_TAG=$(curl -s https://api.github.com/repos/intersectmbo/cardano-node/releases/latest | jq -r .tag_name)
-MITHRIL_TAG=$(curl -s https://api.github.com/repos/input-output-hk/mithril/releases/latest | jq -r .tag_name)
-
-echo "--- Installing Node $LATEST_TAG | Mithril $MITHRIL_TAG ($MODE mode) ---"
-
-# --- 4. SYSTEM DEPENDENCIES ---
+# --- 3. SYSTEM DEPENDENCIES ---
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y automake build-essential pkg-config libffi-dev libgmp-dev \
-libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq wget \
+libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq curl wget \
 libncursesw5 libtool autoconf libsqlite3-dev liblmdb-dev m4 ufw fail2ban
 
-# --- 5. TOOLCHAINS (Always installed for future-proofing) ---
+# --- 4. TOOLCHAINS (Always installed for future-proofing) ---
 echo "--- Installing Toolchains (Haskell & Rust) ---"
 export BOOTSTRAP_HASKELL_NONINTERACTIVE=1
 export BOOTSTRAP_HASKELL_GHC_VERSION=$GHC_VERSION
@@ -71,7 +61,7 @@ fi
 
 mkdir -p "$SRC_DIR"
 
-# --- 6. CRYPTO LIBRARIES (Always built locally for compatibility) ---
+# --- 5. CRYPTO LIBRARIES (Always built locally for compatibility) ---
 echo "--- Building Crypto Libraries ---"
 cd "$SRC_DIR"
 # Libsodium
@@ -105,6 +95,13 @@ sudo cp libblst.a /usr/local/lib
 sudo cp bindings/blst.h bindings/blst_aux.h /usr/local/include
 sudo cp libblst.pc /usr/local/lib/pkgconfig/
 sudo ldconfig
+
+# --- 6. DYNAMIC VERSIONING ---
+
+LATEST_TAG=$(curl -s https://api.github.com/repos/intersectmbo/cardano-node/releases/latest | jq -r .tag_name)
+MITHRIL_TAG=$(curl -s https://api.github.com/repos/input-output-hk/mithril/releases/latest | jq -r .tag_name)
+
+echo "--- Installing Node $LATEST_TAG | Mithril $MITHRIL_TAG ($MODE mode) ---"
 
 # --- 7. BINARY INSTALLATION ---
 if [ "$MODE" == "EXPRESS" ]; then
@@ -144,7 +141,7 @@ BASE_URL="https://book.world.dev.cardano.org/environments/mainnet"
 for file in config.json topology.json byron-genesis.json shelley-genesis.json alonzo-genesis.json conway-genesis.json checkpoints.json; do
     wget -N "$BASE_URL/$file"
 done
-jq '.EnableP2P = true | .hasPrometheus = ["127.0.0.1", 12798] | .hasEKG = ["127.0.0.1", 12788]' config.json > config.json.tmp && mv config.json.tmp config.json
+jq '.EnableP2P = true | .hasPrometheus = ["0.0.0.0", 12798]' config.json > config.json.tmp && mv config.json.tmp config.json
 
 # --- 9. MITHRIL BOOTSTRAP ---
 echo "--- Fast-Syncing with Mithril ---"
@@ -200,7 +197,7 @@ sudo systemctl enable cardano-node
 # rm -rf "$SRC_DIR"
 
 echo "================================================================="
-echo "   DONE! Run: source ~/.bashrc && sudo systemctl start cardano-node"
+echo "   DONE! Running source ~/.bashrc && launching cardano-node"
 echo "================================================================="
 
 # --- 12. AUTO-LAUNCH WITH TMUX ---
