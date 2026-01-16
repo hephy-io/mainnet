@@ -2,6 +2,7 @@
 
 # Initial install of cardano-node and mithril for fast bootstraping for Ubuntu 22.04+
 # Mithril snapshot download dependent upon internet connection speeds
+# Currently configured for mainnet usage only
 
 # Exit on error
 set -e
