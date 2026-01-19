@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote YES on the proposed protocol parameter update proposal to “Increase Transaction and Block Memory Units”. This is the first proposal of a two-step process to increase the parameter value as the desired value is currently a larger increase than the current Guardrail script will allow in one step.\n\nThis is a well written proposal and uses the correct parameter names as found both within the Constitution text and output from the on-chain query `cardano-cli query protocol-parameters –mainnet`. I raise this point as I have previously stated that I would vote NO to any parameter change proposal that does not adhere to the correct naming scheme as found in these two searches. The proposal also provides sufficient evidence of the historical discussions regarding the parameter change including, Cardano Forum posts of the Parameter Change Proposal PCP-003, public survey results, benchmarking results and outputs from both the Parameter Committee and Technical Sterring Committee. There has also been a progressive and phased rollout of the proposed update across both Preview and Prerpod testnets.\n\nThe proposal also contains a reversion plan, as mandated by the Constitution, and so I am comfortable voting YES knowing that if any unforeseen circumstances arise as a result of this change that it should not create too much of an issue with regards to reverting to the current values.\n\nThere has also been a progressive and phased rollout of the proposed update across both Preview and Prerpod testnets."
+  },
+  "hashAlgorithm": "blake2b-256"
+}

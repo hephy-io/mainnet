@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote YES on the Info Action titled “Cardano 2030: Vision, Mission, Strategy Framework and KPIs”. The proposal provides detailed documentation as to the breadth and depth of community input that has gone into this proposal (which is in stark contrast to the absolute lack of it provided in the update constitution action also currently up for vote). Data collection methods have included workshops, focus groups, surveys and business calls, with outputs recorded and links provided at the outset of this proposal.\n\nAs an Info Action it has no on-chain impact and as with other items approved via Info Action, such as a Net Change Limit, it serves as more of a social construct than one enforceable on-chain. There is always the risk, or likelihood in this instance, that the agreed upon strategy will change over time as the technology and ecosystem itself evolves, therefore it is great to see the inclusion of immutable copies of this initial proposal which can serve as a reference point at such times when the strategy needs to be reviewed in the future.\n\nWhile not perfect, this proposal does offer some much-needed direction for the ecosystem now that the original five eras of Cardano development are largely complete. I hope this proves as a useful starting point that can continue to be iterated upon as time goes on so that it can adapt to evolving technologies, broadening use cases and accommodate new participants in the ecosystem."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
