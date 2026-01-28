@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote ABSTAIN on the Treasury Withdrawal proposal for “Cardano DeFi Liquidity Budget - Withdrawal 1” (gov_action1fvgw27fjpr9c7g582mszzyez0jgkqgjgatzdnyngrg8wwc9kcn3qqxtz8r7) following the recent enactment of the Cardano Blockchain Ecosystem Constitution v2.4.\n\nArticle II, Section 6, part 1 states that a governance action proposal format “shall include a URL hosting a document that outlines additional context for the proposed governance action, and the hash of this document. The document hosted by such a URL shall be immutable and incapable of being altered after submission, and the content of every on-chain Governance Action must be identical to the final off-chain version of the proposed action.” Whereas under the previous Constitution, immutable metadata was a “nice to have” or “recommended standard”, the newly enacted Constitution makes it mandatory. While it is reassuring to see all of the supporting links provided using the GitHub permalink format, the main rationale metadata is a standard GitHub url link (likely due to a GitHub permalink possibly breaking the `--anchor-url` character limit). As such I anticipate the CC deeming this one unconstitutional as a result and so I will abstain from spending further time on this proposal until it is re-submitted in-line with the newly enacted Constitution."
+  },
+  "hashAlgorithm": "blake2b-256"
+}

@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote to ABSTAIN on the proposal for the DeltaDeFi: Hydra Trading Infrastructure Budget (gov_action15ce4qnwug759939wqv782pvh6qg68khspg8kh02gmex99mcsytwqqqr7jkr) following the recent enactment of the Cardano Blockchain Ecosystem Constitution v2.4 (gov_action1jxne7hynfd7frcczwumd2eggps4kvy0msjztz9t0mutpy870ksgqqp6vp3p).\n\nBudget Info Actions were a mandatory requirement under the previously active on-chain Constitution. Now that v2.4 has been enacted, there is no longer a requirement for Treasury Withdrawal proposals to have a previously approved Budget Info Action which now ultimately renders this proposal redundant, unfortunately for the proposers of this governance action who have no doubt committed time, effort and substantial funds in crafting and submitting this proposal. It also demonstrates the side effects of voting to enact changes to such a central piece of Cardano governance while processes and proposals are currently running in parallel.\n\nAt this stage it also looks highly unlikely to reach threshold, regardless of which way I vote and so I hope that the proposers take on any feedback that they have collected from DReps so far and apply it to any future proposals that they may submit. It is evident that they put a lot of time and effort in crafting this proposal and so I would like to also commend them on that."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
