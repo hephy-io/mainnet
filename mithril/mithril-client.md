@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/input-output-hk/mithril/refs/heads/main/mithri
 | sh -s -- -c mithril-client -d latest -p YOUR_PATH
 ```
 
-### Move executable 
+### Move executable 
 
 `sudo mv mithril-client /usr/local/bin/`
 
