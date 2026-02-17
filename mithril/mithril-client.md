@@ -1,15 +1,15 @@
 # Bootstrap a Cardano Node using Mithril Client
 
 ## Pre-requisites
-Install Rust
+### Install Rust
 
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
-Update Rust
+### Update Rust
 
 `rustup update`
 
-Install dependencies
+### Install dependencies
 
 `sudo apt install build-essential m4 libssl-dev jq`
 
@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/input-output-hk/mithril/refs/heads/main/mithri
 | sh -s -- -c mithril-client -d latest -p YOUR_PATH
 ```
 
-Move executable 
+### Move executable 
 
 `sudo mv mithril-client /usr/local/bin/`
 
@@ -47,7 +47,8 @@ SNAPSHOT_DIGEST=latest
 EOF'
 ```
 
-Run the script
+### Run the script
+
 `./download-db.sh`
 
 ## Start cardano-node
