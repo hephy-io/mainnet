@@ -5,9 +5,11 @@ Install Rust
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 Update Rust
+
 `rustup update`
 
 Install dependencies
+
 `sudo apt install build-essential m4 libssl-dev jq`
 
 ## Installation of mithril-signer (BP)
@@ -20,17 +22,18 @@ make test
 make build
 ```
 
-### Download the pre-built binary
+### Downloading the pre-built binary
 ```
 curl --proto '=https' --tlsv1.2 -sSf
 https://raw.githubusercontent.com/input-output-hk/mithril/refs/heads/main/mithril-install.sh
 | sh -s -- -c mithril-signer -d latest -p YOUR_PATH
 ```
 
-Verify the binary 
+#### Verify the binary
+
 `./mithril-signer -V`
 
-Create the mithril folder and move the binary
+#### Create the mithril folder and move the binary
 ```
 sudo mkdir -p /opt/mithril
 sudo mv mithril-signer /opt/mithril
@@ -213,10 +216,11 @@ sudo systemctl enable squid
 systemctl status squid
 ```
 
-Firewall Settings (Relay)
+Firewall Settings (Squid Relay)
+
 `sudo ufw allow from **YOUR_BLOCK_PRODUCER_INTERNAL_IP** to any port **YOUR_RELAY_LISTENING_PORT** proto tcp`
 
-Verify Setup
+#### Verify Setup
 Check that the signer is registered
 ```
 wget https://mithril.network/doc/scripts/verify_signer_registration.sh
