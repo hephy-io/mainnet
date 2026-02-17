@@ -130,10 +130,12 @@ sudo make install
 ```
 
 Verify installed version
+
 `/opt/squid/sbin/squid -v`
 
 #### Configure the Squid proxy
 Make a backup of the original config file
+
 `sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak`
 
 Prepare the forward proxy configuration file
@@ -238,10 +240,12 @@ PARTY_ID=**YOUR_POOL_ID** AGGREGATOR_ENDPOINT=**YOUR_AGGREGATOR_ENDPOINT** ./ver
 
 # Maintenance
 ### Restart Signer whenever cardano-node is restarted
+
 `sudo systemctl restart mithril-signer`
 
 ### Updating Mithril Signer
 Update Rust
+
 `rustup update`
 
 Update from source (about 5 mins)
@@ -256,7 +260,7 @@ make build
 Stop mithril-signer, move the new executable to the `/opt/mithril/` folder and restart the signer
 ```
 sudo systemctl stop mithril-signer
-sudo mv /opt/mithril/mithril-signer mithril-signer-old
+sudo mv /opt/mithril/mithril-signer /opt/mithril/mithril-signer-old
 sudo cp mithril-signer /opt/mithril/
 sudo systemctl start mithril-signer
 ```
