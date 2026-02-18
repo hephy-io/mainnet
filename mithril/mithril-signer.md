@@ -95,7 +95,8 @@ systemctl status mithril-signer.service
 
 # Setup Mithril relay node using Squid (Relay)
 ## Pre-requisites
-If running Ubuntu 22.04 or older, remove any version of Squid installed via the `apt` package manager
+If running Ubuntu 22.04 or older, remove any version of Squid installed via the `apt` package manager.
+The package manager only installs up to v5.4 of Squid which is not as secure as v6.12 and above).
 
 ```
 sudo systemctl stop squid
