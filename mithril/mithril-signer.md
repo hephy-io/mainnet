@@ -213,6 +213,7 @@ WantedBy=multi-user.target
 EOF'
 ```
 
+### Reload ans start the service
 ```
 sudo systemctl daemon-reload
 sudo systemctl start squid
