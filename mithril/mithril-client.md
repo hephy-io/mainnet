@@ -1,4 +1,4 @@
-# Bootstrap a Cardano Node using Mithril Client
+# Bootstrap a Cardano Node using mithril-client
 
 ## Pre-requisites
 ### Install Rust
