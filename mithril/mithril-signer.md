@@ -1,15 +1,15 @@
 # Setup Mithril Signer as an SPO (BP and Relay)
 
 ## Pre-requisites
-Install Rust
+#### Install Rust
 
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
-Update Rust
+#### Update Rust
 
 `rustup update`
 
-Install dependencies
+#### Install dependencies
 
 `sudo apt install build-essential m4 libssl-dev jq`
 
@@ -104,14 +104,14 @@ sudo apt autoremove
 ```
 
 ## Compile Squid from source (version 6.12+)
-#### Download Squid
+### Download Squid
 ```
 wget https://www.squid-cache.org/Versions/v6/squid-6.12.tar.gz
 tar xzf squid-6.12.tar.gz
 cd squid-6.12
 ```
 
-#### Configure Squid
+### Configure Squid
 ```
 ./configure \
     --prefix=/opt/squid \
@@ -124,22 +124,22 @@ cd squid-6.12
     --with-pidfile=/opt/squid/var/run/squid.pid
 ```
 
-#### Compile
+### Compile
 ```
 make
 sudo make install
 ```
 
-#### Verify installed version
+### Verify installed version
 
 `/opt/squid/sbin/squid -v`
 
 ## Configure the Squid proxy
-#### Make a backup of the original config file
+### Make a backup of the original config file
 
 `sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak`
 
-#### Prepare the forward proxy configuration file
+### Prepare the forward proxy configuration file
 ```
 sudo bash -c 'cat > /etc/squid/squid.conf << EOF
 # Listening port (port 3132 is recommended)
@@ -213,7 +213,7 @@ WantedBy=multi-user.target
 EOF'
 ```
 
-### Reload ans start the service
+### Reload and start the service
 ```
 sudo systemctl daemon-reload
 sudo systemctl start squid
@@ -221,11 +221,11 @@ sudo systemctl enable squid
 systemctl status squid
 ```
 
-#### Firewall Settings (Squid Relay)
+### Firewall Settings (Squid Relay)
 
 `sudo ufw allow from **YOUR_BLOCK_PRODUCER_INTERNAL_IP** to any port **YOUR_RELAY_LISTENING_PORT** proto tcp`
 
-### Verify Setup
+## Verify Setup
 #### Check that the signer is registered
 ```
 wget https://mithril.network/doc/scripts/verify_signer_registration.sh
@@ -246,11 +246,11 @@ PARTY_ID=**YOUR_POOL_ID** AGGREGATOR_ENDPOINT=**YOUR_AGGREGATOR_ENDPOINT** ./ver
 `sudo systemctl restart mithril-signer`
 
 ### Updating Mithril Signer
-Update Rust
+#### Update Rust
 
 `rustup update`
 
-Update from source (about 5 mins)
+#### Update from source (about 5 mins)
 ```
 git clone https://github.com/input-output-hk/mithril.git
 git checkout latest
@@ -259,7 +259,7 @@ make test
 make build
 ```
 
-Stop mithril-signer, move the new executable to the `/opt/mithril/` folder and restart the signer
+#### Stop mithril-signer, move the new executable to the `/opt/mithril/` folder and restart the signer
 ```
 sudo systemctl stop mithril-signer
 sudo mv /opt/mithril/mithril-signer /opt/mithril/mithril-signer-old
