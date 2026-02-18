@@ -17,7 +17,8 @@
 ### Building from source (about 5 mins)
 ```
 git clone https://github.com/input-output-hk/mithril.git
-git checkout latest
+cd mithril
+git checkout 2603.1
 cd mithril/mithril-signer
 make test
 make build
