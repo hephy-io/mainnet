@@ -113,16 +113,17 @@ cd squid-6.12
 ```
 
 ### Configure Squid
+Taken from Squid documentation for Ubuntu (differs to Official Mithril documentation)
 ```
 ./configure \
-    --prefix=/opt/squid \
-    --localstatedir=/opt/squid/var \
-    --libexecdir=/opt/squid/lib/squid \
-    --datadir=/opt/squid/share/squid \
+    --prefix=/usr \
+    --localstatedir=/var \
+    --libexecdir=${prefix}/lib/squid \
+    --datadir=${prefix}/share/squid \
     --sysconfdir=/etc/squid \
-    --with-default-user=squid \
-    --with-logdir=/opt/squid/var/log/squid \
-    --with-pidfile=/opt/squid/var/run/squid.pid
+    --with-default-user=proxy \
+    --with-logdir=${prefix}/var/log/squid \
+    --with-pidfile=/var/run/squid.pid
 ```
 
 ### Compile
