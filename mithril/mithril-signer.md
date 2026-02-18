@@ -30,18 +30,18 @@ https://raw.githubusercontent.com/input-output-hk/mithril/refs/heads/main/mithri
 | sh -s -- -c mithril-signer -d latest -p YOUR_PATH
 ```
 
-#### Verify the binary
+### Verify the binary
 
 `./mithril-signer -V`
 
-#### Create the mithril folder and move the binary
+### Create the mithril folder and move the executable
 ```
 sudo mkdir -p /opt/mithril
 sudo mv mithril-signer /opt/mithril
 ```
 
-#### Installing the service
-Create the mithril environment file (named to play nice with gLiveView)
+### Create the mithril environment file 
+Named to play nice with gLiveView (official docs use mithril-signer.env)
 ```
 sudo bash -c 'cat > /opt/mithril/mithril.env << EOF
 KES_SECRET_KEY_PATH=/path/to/your/kes.skey
@@ -64,7 +64,8 @@ RELAY_ENDPOINT=SQUID_RELAY_IP:3132
 EOF'
 ```
 
-Create the mithril-signer service file
+### Installing the service
+#### Create the mithril-signer service file
 ```
 sudo bash -c 'cat > /etc/systemd/system/mithril-signer.service << EOF
 [Unit]
@@ -84,7 +85,7 @@ WantedBy=multi-user.target
 EOF'
 ```
 
-Reload and start the service
+#### Reload and start the service
 ```
 sudo systemctl daemon-reload
 sudo systemctl start mithril-signer
@@ -103,14 +104,14 @@ sudo apt autoremove
 ```
 
 ## Compile Squid from source (version 6.12+)
-Download Squid
+#### Download Squid
 ```
 wget https://www.squid-cache.org/Versions/v6/squid-6.12.tar.gz
 tar xzf squid-6.12.tar.gz
 cd squid-6.12
 ```
 
-Configure Squid
+#### Configure Squid
 ```
 ./configure \
     --prefix=/opt/squid \
@@ -123,22 +124,22 @@ Configure Squid
     --with-pidfile=/opt/squid/var/run/squid.pid
 ```
 
-Compile
+#### Compile
 ```
 make
 sudo make install
 ```
 
-Verify installed version
+#### Verify installed version
 
 `/opt/squid/sbin/squid -v`
 
-#### Configure the Squid proxy
-Make a backup of the original config file
+## Configure the Squid proxy
+#### Make a backup of the original config file
 
 `sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak`
 
-Prepare the forward proxy configuration file
+#### Prepare the forward proxy configuration file
 ```
 sudo bash -c 'cat > /etc/squid/squid.conf << EOF
 # Listening port (port 3132 is recommended)
@@ -219,19 +220,19 @@ sudo systemctl enable squid
 systemctl status squid
 ```
 
-Firewall Settings (Squid Relay)
+#### Firewall Settings (Squid Relay)
 
 `sudo ufw allow from **YOUR_BLOCK_PRODUCER_INTERNAL_IP** to any port **YOUR_RELAY_LISTENING_PORT** proto tcp`
 
-#### Verify Setup
-Check that the signer is registered
+### Verify Setup
+#### Check that the signer is registered
 ```
 wget https://mithril.network/doc/scripts/verify_signer_registration.sh
 chmod +x verify_signer_registration.sh
 PARTY_ID=**YOUR_POOL_ID** AGGREGATOR_ENDPOINT=**YOUR_AGGREGATOR_ENDPOINT** ./verify_signer_registration.sh
 ```
 
-Check that the signer is contributing
+#### Check that the signer is contributing
 ```
 wget https://mithril.network/doc/scripts/verify_signer_signature.sh
 chmod +x verify_signer_signature.sh
