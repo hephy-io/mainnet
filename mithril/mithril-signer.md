@@ -1,15 +1,15 @@
 # Setup Mithril Signer as an SPO (BP and Relay)
 
 ## Pre-requisites
-#### Install Rust
+### Install Rust
 
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
-#### Update Rust
+### Update Rust
 
 `rustup update`
 
-#### Install dependencies
+### Install dependencies
 
 `sudo apt install build-essential m4 libssl-dev jq`
 
@@ -65,8 +65,7 @@ RELAY_ENDPOINT=SQUID_RELAY_IP:3132
 EOF'
 ```
 
-### Installing the service
-#### Create the mithril-signer service file
+### Create the mithril-signer.service file
 ```
 sudo bash -c 'cat > /etc/systemd/system/mithril-signer.service << EOF
 [Unit]
@@ -86,7 +85,7 @@ WantedBy=multi-user.target
 EOF'
 ```
 
-#### Reload and start the service
+### Reload and start the service
 ```
 sudo systemctl daemon-reload
 sudo systemctl start mithril-signer
@@ -194,7 +193,7 @@ http_access deny all
 EOF'
 ```
 
-### Create the service file
+### Create the squid.service file
 ```
 sudo bash -c 'cat > /etc/systemd/system/squid.service << EOF
 [Unit]
@@ -228,14 +227,14 @@ systemctl status squid
 `sudo ufw allow from **YOUR_BLOCK_PRODUCER_INTERNAL_IP** to any port **YOUR_RELAY_LISTENING_PORT** proto tcp`
 
 ## Verify Setup
-#### Check that the signer is registered
+### Check that the signer is registered
 ```
 wget https://mithril.network/doc/scripts/verify_signer_registration.sh
 chmod +x verify_signer_registration.sh
 PARTY_ID=**YOUR_POOL_ID** AGGREGATOR_ENDPOINT=**YOUR_AGGREGATOR_ENDPOINT** ./verify_signer_registration.sh
 ```
 
-#### Check that the signer is contributing
+### Check that the signer is contributing
 ```
 wget https://mithril.network/doc/scripts/verify_signer_signature.sh
 chmod +x verify_signer_signature.sh
@@ -247,21 +246,23 @@ PARTY_ID=**YOUR_POOL_ID** AGGREGATOR_ENDPOINT=**YOUR_AGGREGATOR_ENDPOINT** ./ver
 
 `sudo systemctl restart mithril-signer`
 
-### Updating Mithril Signer
-#### Update Rust
+## Updating Mithril Signer
+### Update Rust
 
 `rustup update`
 
-#### Update from source (about 5 mins)
+### Update from source (about 5 mins)
 ```
+cd git
+mv mithril mithril-old
 git clone https://github.com/input-output-hk/mithril.git
-git checkout latest
-cd mithril/mithril-signer
-make test
+cd mithril
+git checkout 2603.1
+cd mithril-signer
 make build
 ```
 
-#### Stop mithril-signer, move the new executable to the `/opt/mithril/` folder and restart the signer
+### Stop mithril-signer, move the new executable to the `/opt/mithril/` folder and restart the signer
 ```
 sudo systemctl stop mithril-signer
 sudo mv /opt/mithril/mithril-signer /opt/mithril/mithril-signer-old
