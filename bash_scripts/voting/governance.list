@@ -1,0 +1,6 @@
+# Format
+# ActionID#Index | Role | Vote | Metadata_File
+
+# Example
+# 8845bfc37bb2f69e8f200fe28148b3dea3c4399b0c49ee0ed2bb4e349cab9eb7#0  drep Yes GA084-info-vrhf.jsonld
+# 8845bfc37bb2f69e8f200fe28148b3dea3c4399b0c49ee0ed2bb4e349cab9eb7#0  spo Yes GA084-info-vrhf.jsonld
