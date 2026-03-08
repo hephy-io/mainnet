@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote YES on the treasury withdrawal proposal “Amaru Treasury Withdrawal 2026” (gov_action19uhuy5uame2s60yrh6n8cyds8ps5q7tkh05dqlzmpcfy429p9w4qq5ll3g0).\n\nIt is great to see a return to professional, detailed and well-documented governance actions. This is a thorough proposal that outlines a new treasury withdrawal request as well as a detailed retrospective from the previous year of treasury funding. The Amaru team have acted with transparency and integrity while in receipt of treasury funds previously and have set a high standard that I imagine the community will soon hold other treasury proposals too, should other teams seek to apply for continued treasury funding, having received some in the past already. The end of the first Amaru treasury funding period culminated in the Amaru team returning 920,400 ada to the treasury prior to the submission of this proposal.\n\nThe event of November 2025 highlighted the importance and urgent need for node client diversity in the Cardano ecosystem and so far the Amaru node development appears to be the best shot at achieving this in a short to medium term time frame. The security risks of relying on a single node client have never been more evident to the Cardano ecosystem since November 2025, a situation where node version diversity may have saved the network from a catastrophic event. Node client diversity would help strengthen network security and resilience. Yes, there are trade-offs and it can make upgrades more complex in the future having to cater to multiple different node clients but having to choose between that and a potential single point of failure is a point where I would choose resilience over convenience.\n\nThe physical Amaru Pi node examples at the Cardano Summit were a nice touch, although sad to have missed out on one myself, they provided a great way to showcase a tangible output from a treasury funded project. While I appreciate that a lot of treasury funding goes toward research and tooling that may often feel abstract to end users of Cardano, tangible results can contribute greatly to ecosystem participants comprehending funding outcomes better.\n\nKeep up the great work."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
