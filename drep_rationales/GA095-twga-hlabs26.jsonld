@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote YES on the Treasury Withdrawal action titled “Pebble + Gerolamo - HLabs 2026 Budget” (b11527fbcdc9d41e8f497de64a029a18673a5eefc413718459046f0b7a1a6656#0).\n\nI have taken my time with voting on this proposal in an attempt to understand its place among other recent alternative node proposals and the community sentiment for or against it. It is clear that there is currently strong community support for this proposal and it is now close to passing with just a few hours left until the end of the epoch.\n\nWhile the Amaru and Dingo proposals position themselves as fully functional (block producer capable) alternate nodes to the current Haskell node, this proposal offers a different target market at this stage of its development. Instead, it positions itself as “a complementary implementation focused on browser light node and data-node use cases, not a replacement for block-producing nodes yet”. Providing access to the Cardano blockchain through another programming language, Typescript, in addition to the Rust and Go implementations offered by Amaru and Dingo respectively. Widening developer access to the Cardano blockchain and its data is vital to onboarding more developers to build a greater array of applications on top of Cardano.\n\nNo, we probably shouldn’t fund every single alternate programming language proposal that comes around but a Rust, Go and Typescript set forms quite a big trident to land a new wave of developers interested in Cardano, across web3 and web2 ecosystems. It’s time to finally put to bed the old “nobody uses Haskell” narrative. It gave us the secure base, now it’s time to build on it with a variety of toolkits and see what’s possible."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
