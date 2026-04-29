@@ -18,7 +18,7 @@
 ```
 git clone https://github.com/input-output-hk/mithril.git
 cd mithril
-git checkout 2603.1
+git checkout 2617.0
 cd mithril/mithril-signer
 make test
 make build
@@ -257,7 +257,7 @@ cd git
 mv mithril mithril-old
 git clone https://github.com/input-output-hk/mithril.git
 cd mithril
-git checkout 2603.1
+git checkout 2617.0
 cd mithril-signer
 make build
 ```
