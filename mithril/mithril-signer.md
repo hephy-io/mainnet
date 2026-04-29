@@ -247,6 +247,15 @@ PARTY_ID=**YOUR_POOL_ID** AGGREGATOR_ENDPOINT=**YOUR_AGGREGATOR_ENDPOINT** ./ver
 `sudo systemctl restart mithril-signer`
 
 ## Updating Mithril Signer
+
+### Download pre-built binary using one-line installer
+```
+cd /opt/mithril
+sudo systemctl stop mithril-signer
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/input-output-hk/mithril/refs/heads/main/mithril-install.sh | sh -s -- -c mithril-signer -d 2617.0 -p $(pwd)
+sudo systemctl restart mithril-signer
+```
+
 ### Update Rust
 
 `rustup update`
