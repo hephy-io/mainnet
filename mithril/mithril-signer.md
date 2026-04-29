@@ -28,7 +28,7 @@ make build
 ```
 curl --proto '=https' --tlsv1.2 -sSf
 https://raw.githubusercontent.com/input-output-hk/mithril/refs/heads/main/mithril-install.sh
-| sh -s -- -c mithril-signer -d latest -p YOUR_PATH
+| sh -s -- -c mithril-signer -d latest -p $(pwd)
 ```
 
 ### Verify the binary
@@ -248,14 +248,25 @@ PARTY_ID=**YOUR_POOL_ID** AGGREGATOR_ENDPOINT=**YOUR_AGGREGATOR_ENDPOINT** ./ver
 
 ## Updating Mithril Signer
 
-### Download pre-built binary using one-line installer
+### Move to Mithril folder and stop Signer
 ```
 cd /opt/mithril
 sudo systemctl stop mithril-signer
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/input-output-hk/mithril/refs/heads/main/mithril-install.sh | sh -s -- -c mithril-signer -d 2617.0 -p $(pwd)
-sudo systemctl restart mithril-signer
 ```
 
+## 1. Pre-built binary method
+### Move to Mithril folder and stop Signer
+```
+cd /opt/mithril
+sudo systemctl stop mithril-signer
+```
+
+### Downloading the pre-built binary
+```
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/input-output-hk/mithril/refs/heads/main/mithril-install.sh | sh -s -- -c mithril-signer -d 2617.0 -p $(pwd)
+```
+
+## 2. Build from source method
 ### Update Rust
 
 `rustup update`
@@ -277,4 +288,14 @@ sudo systemctl stop mithril-signer
 sudo mv /opt/mithril/mithril-signer /opt/mithril/mithril-signer-old
 sudo cp mithril-signer /opt/mithril/
 sudo systemctl start mithril-signer
+```
+
+### 3. Verify the binary
+```
+./mithril-signer -V
+```
+
+### Restart the Signer
+```
+sudo systemctl restart mithril-signer
 ```
