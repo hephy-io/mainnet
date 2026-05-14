@@ -31,8 +31,8 @@ case $choice in
 esac
 
 # --- 2. CONFIGURATION ---
-GHC_VERSION="9.6.6"
-CABAL_VERSION="3.10.3.0"
+GHC_VERSION="9.6.7"
+CABAL_VERSION="3.12.1.0"
 BLST_VERSION="v0.3.14"
 NODE_HOME="$HOME/cardano-node"
 SRC_DIR="$HOME/src"
@@ -46,7 +46,8 @@ ANCILLARY_VKEY_URL="https://raw.githubusercontent.com/input-output-hk/mithril/ma
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y automake build-essential pkg-config libffi-dev libgmp-dev \
 libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev make g++ tmux git jq curl wget \
-libncursesw5 libtool autoconf libsqlite3-dev liblmdb-dev m4 ufw fail2ban
+libncursesw5 libtool autoconf libsqlite3-dev liblmdb-dev m4 ufw fail2ban liburing-dev \
+protobuf-compiler libsnappy-dev
 
 # --- 4. TOOLCHAINS (Always installed for future-proofing) ---
 echo "--- Installing Toolchains (Haskell & Rust) ---"
@@ -143,7 +144,7 @@ BASE_URL="https://book.world.dev.cardano.org/environments/mainnet"
 for file in config.json topology.json byron-genesis.json shelley-genesis.json alonzo-genesis.json conway-genesis.json checkpoints.json; do
     wget -N "$BASE_URL/$file"
 done
-jq '.EnableP2P = true | .hasPrometheus = ["0.0.0.0", 12798]' config.json > config.json.tmp && mv config.json.tmp config.json
+jq '.TraceOptions[""].backends |= map(if startswith("Prometheus") then "PrometheusSimple suffix 0.0.0.0 12798" else . end)' config.json > config.json.tmp && mv config.json.tmp config.json
 
 # --- 9. MITHRIL BOOTSTRAP ---
 echo "--- Fast-Syncing with Mithril ---"
