@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote YES on the proposal “Rare Evo and Dev Gov Day 2026: Cardano Title Sponsorship” (3f4b022c9913d52f9f39a8c82a1b9ebe5143fb745f3531f9366c7268bf9b9ce4#0).\n\nSimilar to my 5am.earth rationale, we cannot continue to build, build, build, without any marketing. Cardano already suffers from a chronic perception problem and hiding behind “fiscal responsibility” to vote down every growth and marketing effort while approving hundreds of millions for infrastructure is going to leave us all in a cathedral with no windows or doors.\n\nRare Evo began as a Cardano event. When the wider ecosystem still tried to shun Cardano, Rare Evo helped put it on the map. It eventually growing into a multi-chain event then gave the Cardano ecosystem exposure to the wider market. We can sit here and nitpick over the value of Summits and conferences like this but you honestly cannot put a value on the importance of in-person events. As someone who began a stake pool in rural UK, an ada holder since 2018, I probably wouldn’t still be in this ecosystem if it was not for the friendships and working relationships forged through in-person events. They are so important. If no one knows we are here, what are we even doing."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
