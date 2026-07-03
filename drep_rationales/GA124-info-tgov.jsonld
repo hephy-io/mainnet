@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote NO on the info action “Reforming Treasury Governance” (5d3a1f657fe330b51b459ca9b482fc1a3b6e3336227f880d8a058771c23e3ce2#0).\n\nThis may be just an Info Action but it does not mean that we should lower proposal standards this far into year 2 of Cardano governance. DReps and CC members are already seriously overburdened this year without having to spend even more time voting on poorly executed governance actions. This action is unconstitutional out of the gate for not having an immutable metadata anchor link. It uses a standard GitHub url which could have been easily resolved by using a GitHub permalink. It also does not follow the CIP-108 standard of using GitHub markdown styling which has led to improper rendering of HTML tags on governance explorers. We have test networks explicitly for this purpose, with Preprod having recently lowered the govAction deposit amount to allow better access for testing govAction submissions. With a 100,000 ada deposit that has real world value, and often tax event implications, I find it hard to understand why more care is not taken with some proposals."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
