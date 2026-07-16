@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote YES on the treasury withdrawal action “Intersect: Governance coordination and technical stewardship for the Cardano ecosystem” (b3d452bff7769d7f557ec6b8974760ee6c5e496c276652b654032966621e0ccf#4).\n\nFirst of all, voting YES to the Technical Steering Committee (TSC) proposal while voting NO to the Intersect core proposal seems nonsensical to me. It is highly unlikely that the former would exist without the latter. Secondly, requests to unbundle the proposal while seeing the value in the technical element, while the technical element is ~75% of the ask here seems equally perplexing.\n\nVoting as someone who is both an SPO and a DRep, I am someone who downloads the source code for node upgrades from the Intersect repositories, and for the van Rossem hard fork (and Chang and Plomin before that) I received my information from the Hard Fork Working Group, who have operated under the Intersect Technical Steering Committee and coordinated three hard forks now. What happens to these repositories and to future hard fork coordination if funding stops?\n\nWe are all so keen to see Leios come to fruition and yet are we prepared to pull the rug out from under the coordination layer that has successfully overseen three hard forks now? It is not just the technical when it comes to Leios either. Constitutional changes are required to accommodate new block types and parameters, and the Civics, Technical Steering and Parameter committees are already in discussions with IOG on the best way to move forward here. Without funding, will Intersect still be able to support this coordination through to Leios? Coordination is often unseen and unsexy work but it is often the critical work that takes place in the background. When I turn my bathroom taps on every morning, I don’t think about the plumbing and the processes that result in the clean water that comes out, it just happens, I only notice something wrong when something breaks or that plumbing is no longer there.\n\nIt is unfortunate that the 3% administration fee did not exist last year as it would have likely helped reduce the ask here this year now that the Treasury Reserve Smart Contract is showing 500M+ ada under administration. However, the realisation and the move to this administration fee model in 2026 is encouraging as it makes the 2026 funding more of a bridge to a more sustainable Intersect and less of a recurring treasury dependency. The fixed fee should mean that Intersects revenue from these services should scale with their utilisation going forward.\n\nWith the future of Emurgo uncertain and IOG moving more of the technical scaffolding towards Intersect, I don’t think now is a good time to possibly lose another major entity from the ecosystem. Intersect might not be perfect and everyone has their own opinions and views on what it should be but the unseen work that stewards the core blockchain technology is too valuable to be haggling over it at this critical juncture for Cardano."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
