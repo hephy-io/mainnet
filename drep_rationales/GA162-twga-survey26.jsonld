@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "CIP100": "https://github.com/cardano-foundation/CIPs/blob/master/CIP-0100/README.md#",
+    "hashAlgorithm": "CIP100:hashAlgorithm",
+    "body": {
+      "@id": "CIP100:body",
+      "@context": {
+        "references": {
+          "@id": "CIP100:references",
+          "@container": "@set",
+          "@context": {
+            "GovernanceMetadata": "CIP100:GovernanceMetadataReference",
+            "Other": "CIP100:OtherReference",
+            "label": "CIP100:reference-label",
+            "uri": "CIP100:reference-uri",
+            "referenceHash": {
+              "@id": "CIP100:referenceHash",
+              "@context": {
+                "hashDigest": "CIP100:hashDigest",
+                "hashAlgorithm": "CIP100:hashAlgorithm"
+              }
+            }
+          }
+        },
+        "comment": "CIP100:comment",
+        "externalUpdates": {
+          "@id": "CIP100:externalUpdates",
+          "@context": {
+            "title": "CIP100:update-title",
+            "uri": "CIP100:uri"
+          }
+        }
+      }
+    },
+    "authors": {
+      "@id": "CIP100:authors",
+      "@container": "@set",
+      "@context": {
+        "name": "http://xmlns.com/foaf/0.1/name",
+        "witness": {
+          "@id": "CIP100:witness",
+          "@context": {
+            "witnessAlgorithm": "CIP100:witnessAlgorithm",
+            "publicKey": "CIP100:publicKey",
+            "signature": "CIP100:signature"
+          }
+        }
+      }
+    }
+  },
+  "authors": [],
+  "body": {
+    "comment": "I vote ABSTAIN on \"State of the Cardano Developer Ecosystem - 2026 Survey\" (706449f5192f3951a3c3cb1485215c7c02c951114e75f00147d6e2dfd16d657d#0).\n\nThis Info Action functions as a call to action for the 2026 \"[State of the Cardano Developer Ecosystem](https://devsurvey.cardano.org/?lang=en)\" survey. There is no on-chain voting action required here, although the [proposal metadata](https://bafybeigu7w3nb5xtjwagapv7t74djj4ojgnopiwyidps36vvuqjsfue3we.ipfs.inbrowser.link) itself states: \"You don't need to vote. This action doesn't change anything or ask for a decision. If you'd still like to record a vote, Abstain is the way to go.\" Therefore, this Abstain vote is submitted as both [SPO](https://cardanoscan.io/pool/pool17n47upcpnzsdks0yd409nf79sg6hqy73twg87eddwh24uj745rt) and [DRep](https://cardanoscan.io/drep/drep1y2zu74gt8sxtrxcngqsmrnupkzrtmlqshmvmm5qtuhxx6xqt7yhaw) simply to maintain an on-chain voting record."
+  },
+  "hashAlgorithm": "blake2b-256"
+}
